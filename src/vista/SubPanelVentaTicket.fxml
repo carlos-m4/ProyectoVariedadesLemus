@@ -1,14 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<AnchorPane prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #f4f4f4;" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SubPanelTicketVentaController">
+    <children>
+        <Label layoutX="35.0" layoutY="25.0" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1a1a1a;" text="Ticket de venta" />
+        <HBox layoutX="35.0" layoutY="70.0" spacing="30.0">
+            <children>
+                <VBox fx:id="tarjetaTicket" prefWidth="280.0" spacing="8.0" style="-fx-background-color: #ffffff; -fx-border-color: #dcdcdc; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                    <children>
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #14345c;" text="Variedades Lemus" />
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Label style="-fx-text-fill: #555555;" text="Ticket N.º" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label fx:id="lblTicketNum" style="-fx-text-fill: #14345c;" text="001" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Label style="-fx-text-fill: #555555;" text="Fecha" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label fx:id="lblFecha" style="-fx-text-fill: #14345c;" text="001" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Label style="-fx-text-fill: #555555;" text="Atendió" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label fx:id="lblAtendio" style="-fx-text-fill: #14345c;" text="Empleado" />
+                            </children>
+                        </HBox>
 
+                        <TableView fx:id="tblTicketDetalle" prefHeight="160.0" prefWidth="250.0">
+                            <columns>
+                                <TableColumn fx:id="colCant" prefWidth="50.0" text="Cant" />
+                                <TableColumn fx:id="colNombre" prefWidth="120.0" text="Nombre" />
+                                <TableColumn fx:id="colPrecio" prefWidth="78.0" text="Precio" />
+                            </columns>
+                        </TableView>
+
+                        <HBox alignment="CENTER_LEFT" style="-fx-padding: 5 0 0 0;">
+                            <children>
+                                <Label style="-fx-font-weight: bold; -fx-text-fill: #333333;" text="Total" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label fx:id="lblTotalTicket" style="-fx-font-weight: bold; -fx-text-fill: #333333;" text="\$ 66.67" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox spacing="20.0">
+                    <children>
+                        <VBox prefWidth="280.0" spacing="12.0" style="-fx-background-color: #ffffff; -fx-border-color: #dcdcdc; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            </padding>
+                            <children>
+                                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1a1a1a;" text="Total" />
+                                <Label fx:id="lblTotalCobrado" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1a1a1a;" text="\$ 66.67" />
+                                <HBox alignment="CENTER_LEFT" style="-fx-padding: 10 0 0 0;">
+                                    <children>
+                                        <Label style="-fx-text-fill: #555555;" text="Metodo de pago" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Label fx:id="lblMetodoPago" style="-fx-text-fill: #1a1a1a;" text="Efectivo" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label style="-fx-text-fill: #555555;" text="Productos" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Label fx:id="lblCantProductos" style="-fx-text-fill: #1a1a1a;" text="3" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label style="-fx-text-fill: #555555;" text="Cambio" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Label fx:id="lblCambio" style="-fx-text-fill: #1a1a1a;" text="\$ 3.00" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                            <children>
+                                <Button fx:id="btnImprimir" onAction="#onImprimirTicket" style="-fx-background-color: rgba(14, 52, 92, 1); -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 16; -fx-background-radius: 4;" text="Imprimir Ticket" />
+                                <Button fx:id="btnNuevaVenta" onAction="#onNuevaVenta" style="-fx-background-color: rgba(15, 156, 45, 1); -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 16; -fx-background-radius: 4;" text="Nueva venta" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
 </AnchorPane>

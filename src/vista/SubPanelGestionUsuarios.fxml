@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="444.0" prefWidth="600.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SubPanelAddUsuariosController">
+   <children>
+      <TextField id="txtUsuario" editable="false" focusTraversable="false" layoutX="132.0" layoutY="18.0" prefHeight="409.0" prefWidth="336.0" style="-fx-background-radius: 7;" />
+      <Label fx:id="lblTituloUsuario" layoutX="139.0" layoutY="25.0" text="Crear usuarios">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="69.0" text="Nombre">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <TextField id="TF_Nombre" fx:id="txtNameUsuario" alignment="TOP_LEFT" layoutX="151.0" layoutY="91.0" onAction="#OnNameUSer" prefHeight="28.0" prefWidth="305.0" promptText="Nombre del usuario" style="-fx-background-radius: 6;" />
+      <TextField id="TF_Apellido" fx:id="txtNameApellido" alignment="TOP_LEFT" layoutX="148.0" layoutY="158.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#OnApellidoUSer" prefHeight="28.0" prefWidth="305.0" promptText="Apellido del usuario" style="-fx-background-radius: 6;" />
+      <TextField id="TF_Usuario" fx:id="txtUser" alignment="TOP_LEFT" layoutX="151.0" layoutY="223.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#On_Name_usuario" prefHeight="28.0" prefWidth="293.0" promptText="Ingresa el nombre de usuario" style="-fx-background-radius: 6;" />
+      <Label layoutX="150.0" layoutY="136.0" text="Apellido">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="202.0" text="Usuario">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="151.0" layoutY="264.0" text="Contraseña">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <PasswordField id="TF_Contra" fx:id="txtContra" alignment="TOP_LEFT" layoutX="151.0" layoutY="288.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#On_Password_usuario" prefHeight="28.0" prefWidth="293.0" promptText="Ingresa una contraseña" style="-fx-background-radius: 6;" />
+      <ComboBox id="Combox_rol" fx:id="cmbCategoria1" layoutX="147.0" layoutY="329.0" onAction="#onFiltrarrool" prefHeight="25.0" prefWidth="150.0" promptText="Rol" />
+      <Button id="btnCrear_Usuario" fx:id="btnCreateUsuario" layoutX="147.0" layoutY="381.0" mnemonicParsing="false" onAction="#onCrearUSerClick" prefHeight="16.0" prefWidth="130.0" style="-fx-background-color: rgba(15, 156, 45, 1); -fx-background-radius: 5;" text="Crear usuario" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image_Principal/Create_User.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button id="btnCancelar_Usuario" fx:id="btnCancel" layoutX="314.0" layoutY="381.0" mnemonicParsing="false" onAction="#onCancelClick" prefHeight="16.0" prefWidth="130.0" style="-fx-background-color: rgba(208, 18, 18, 1); -fx-background-radius: 5;" text="Cancelar" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

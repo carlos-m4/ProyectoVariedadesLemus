@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<AnchorPane prefHeight="444.0" prefWidth="600.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PanelReporteEmpleadoController">
+    <children>
+        <TextField editable="false" focusTraversable="false" layoutX="132.0" layoutY="18.0" prefHeight="409.0" prefWidth="336.0" style="-fx-background-radius: 7;" />
+        <Label fx:id="lblTituloInc" layoutX="139.0" layoutY="25.0" text="Registrar incidencia">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="150.0" layoutY="62.0" text="Cliente">
+            <font>
+                <Font name="System Bold" size="11.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtClienteInc" layoutX="151.0" layoutY="82.0" onAction="#onClienteInc" prefHeight="28.0" prefWidth="293.0" promptText="Nombre del cliente" style="-fx-background-radius: 6;" />
 
+        <Label layoutX="150.0" layoutY="118.0" text="Tipo">
+            <font>
+                <Font name="System Bold" size="11.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="cmbTipoInc" layoutX="151.0" layoutY="136.0" prefHeight="28.0" prefWidth="140.0" promptText="Tipo" />
+        <Label layoutX="304.0" layoutY="118.0" text="N.º de ticket (opcional)">
+            <font>
+                <Font name="System Bold" size="11.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtTicketInc" layoutX="304.0" layoutY="136.0" onAction="#onTicketInc" prefHeight="28.0" prefWidth="140.0" promptText="Ej: 12" style="-fx-background-radius: 6;" />
+
+        <Label layoutX="150.0" layoutY="172.0" text="Monto devuelto">
+            <font>
+                <Font name="System Bold" size="11.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtMontoInc" layoutX="151.0" layoutY="190.0" onAction="#onMontoInc" prefHeight="28.0" prefWidth="140.0" promptText="\$ 0.00" style="-fx-background-radius: 6;" />
+
+        <Label layoutX="150.0" layoutY="226.0" text="Descripción">
+            <font>
+                <Font name="System Bold" size="11.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="txtDescripcionInc" layoutX="151.0" layoutY="244.0" prefHeight="110.0" prefWidth="293.0" promptText="¿Qué pasó? Ej: la camisa venía rota y se le devolvió el dinero." wrapText="true" />
+
+        <Button fx:id="btnGuardarInc" layoutX="147.0" layoutY="381.0" mnemonicParsing="false" onAction="#onGuardarIncidencia" prefHeight="16.0" prefWidth="130.0" style="-fx-background-color: rgba(15, 156, 45, 1); -fx-background-radius: 5;" text="Guardar" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnCancelarInc" layoutX="314.0" layoutY="381.0" mnemonicParsing="false" onAction="#onCancelarIncidencia" prefHeight="16.0" prefWidth="130.0" style="-fx-background-color: rgba(208, 18, 18, 1); -fx-background-radius: 5;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

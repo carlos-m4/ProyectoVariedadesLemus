@@ -1,0 +1,104 @@
+.button {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(14, 52, 92, 0.20), 4, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(14, 52, 92, 0.40), 10, 0.15, 0, 3);
+}
+
+.button:pressed {
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.35), 6, 0, 0, 2);
+}
+
+.button:disabled {
+    -fx-effect: null;
+    -fx-opacity: 0.55;
+}
+
+.button.btn-menu {
+    -fx-background-color: rgba(14, 52, 92, 1);
+    -fx-background-radius: 7;
+    -fx-text-fill: #e0f7ff;
+    -fx-effect: null;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+.button.btn-menu:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-translate-x: 3;
+}
+
+.button.btn-menu:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.22);
+    -fx-effect: null;
+}
+
+.button.btn-menu.activo {
+    -fx-background-color: rgba(255, 255, 255, 0.16), rgba(15, 156, 45, 1);
+    -fx-background-insets: 0, 0 135 0 0;
+    -fx-font-weight: bold;
+}
+
+.link-label {
+    -fx-cursor: hand;
+}
+
+.link-label:hover {
+    -fx-underline: true;
+    -fx-opacity: 0.85;
+}
+
+.icono-accion {
+    -fx-cursor: hand;
+}
+
+.icono-accion:hover {
+    -fx-scale-x: 1.15;
+    -fx-scale-y: 1.15;
+    -fx-effect: dropshadow(gaussian, rgba(14, 52, 92, 0.45), 6, 0, 0, 1);
+}
+
+.icono-accion:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+.metodo-pago {
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #c9d3dd;
+}
+
+.metodo-pago:hover {
+    -fx-background-color: #e8eef5;
+}
+
+.metodo-pago.seleccionado {
+    -fx-background-color: rgba(14, 52, 92, 1);
+    -fx-border-color: rgba(14, 52, 92, 1);
+    -fx-text-fill: white;
+}
+
+.fila-stock-bajo {
+    -fx-background-color: #fdecec;
+}
+
+.fila-stock-bajo:selected {
+    -fx-background-color: #d01212;
+}
+
+.fila-inactiva {
+    -fx-opacity: 0.55;
+}
+
+.capa-oscura {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}

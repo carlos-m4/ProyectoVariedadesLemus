@@ -7,42 +7,40 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane style="-fx-background-color: #F4F6F8;" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
-      <ImageView fitHeight="73.0" fitWidth="199.0" layoutX="202.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image%20login/Logo%20del%20negocio.png" />
-         </image>
-      </ImageView>
-      <Button id="btnIniciarSesion" layoutX="201.0" layoutY="303.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="186.0" style="-fx-background-color: #0E345C; -fx-text-fill: white; -fx-background-radius: 7; -fx-font-weight: bold;" text="Iniciar Sesion" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <PasswordField id="PasswordField" layoutX="169.0" layoutY="227.0" prefHeight="40.0" prefWidth="249.0" style="-fx-background-color: E1E5E8; -fx-background-radius: 8;" />
-      <TextField id="txtUsuario" layoutX="169.0" layoutY="151.0" prefHeight="40.0" prefWidth="249.0" style="-fx-background-color: E1E5E8; -fx-background-radius: 8;" />
-      <Label layoutX="200.0" layoutY="161.0" text="Nombre de usuario" textFill="#767676">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="208.0" layoutY="234.0" text="Contraseña" textFill="#767676">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="181.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image%20login/Frame@2x.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="17.0" fitWidth="18.0" layoutX="182.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image%20login/Padlock-Square-1--Streamline-Sharp-Remix.png" />
-         </image>
-      </ImageView>
+      <AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="73.0" fitWidth="199.0" layoutX="202.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image_Login/Logo_Negocio.png" />
+               </image>
+            </ImageView>
+
+            <TextField fx:id="txtUsuario" layoutX="169.0" layoutY="151.0" prefHeight="40.0" prefWidth="249.0" promptText="Nombre de usuario" style="-fx-background-color: E1E5E8; -fx-background-radius: 8; -fx-padding: 0 0 0 35;" />
+            <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="181.0" layoutY="163.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image_Login/User.png" />
+               </image>
+            </ImageView>
+
+            <PasswordField fx:id="txtPassword" layoutX="169.0" layoutY="213.0" prefHeight="40.0" prefWidth="249.0" promptText="Contraseña" style="-fx-background-color: E1E5E8; -fx-background-radius: 8; -fx-padding: 0 0 0 35;" />
+            <ImageView fitHeight="17.0" fitWidth="18.0" layoutX="182.0" layoutY="221.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image_Login/Candado.png" />
+               </image>
+            </ImageView>
+
+            <Button fx:id="btnIniciarSesion" layoutX="201.0" layoutY="303.0" mnemonicParsing="false" onAction="#onIniciarSesionClick" prefHeight="40.0" prefWidth="186.0" style="-fx-background-color: #0E345C; -fx-text-fill: white; -fx-background-radius: 7; -fx-font-weight: bold;" text="Iniciar Sesion" />
+            <Label id="Contra_olvidada" fx:id="Text_password_ol" layoutX="223.0" layoutY="263.0" onMouseClicked="#OnPassword_LO" prefHeight="16.0" prefWidth="141.0" styleClass="link-label" text="¿Olvidaste tu contraseña?" textFill="#767676">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>

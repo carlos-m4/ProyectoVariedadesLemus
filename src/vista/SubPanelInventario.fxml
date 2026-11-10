@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="475.0" prefWidth="792.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SubPanelINventarioController">
+   <children>
+      <TextField id="txtUsuario" editable="false" focusTraversable="false" layoutX="36.0" layoutY="36.0" prefHeight="403.0" prefWidth="720.0" style="-fx-background-radius: 5;" />
+      <Label fx:id="lblTituloProducto" layoutX="42.0" layoutY="71.0" text="Agregar producto">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button id="btnGuardar_Producto" fx:id="btnGuardar_product" alignment="TOP_CENTER" layoutX="585.0" layoutY="399.0" mnemonicParsing="false" onAction="#onsave_product" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: rgba(15, 156, 45, 1); -fx-background-radius: 5;" text="Guardar producto" textFill="WHITE" wrapText="true" />
+      <TextField id="btnCodigo_Product" fx:id="txtcodigo_produc" alignment="TOP_LEFT" editable="false" focusTraversable="false" layoutX="42.0" layoutY="150.0" onAction="#onCod" prefHeight="27.0" prefWidth="179.0" promptText="Automático" />
+      <Label layoutX="42.0" layoutY="123.0" text="Codigo del producto">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="btnNombre_product" fx:id="txtcodigo_produc1" alignment="TOP_LEFT" layoutX="248.0" layoutY="150.0" onAction="#onName_product" prefHeight="27.0" prefWidth="234.0" promptText="Ingresa el nombre del producto" />
+      <Label layoutX="248.0" layoutY="123.0" text="Nombre">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="btnCategoria_product" fx:id="txtcodigo_produc11" alignment="TOP_LEFT" layoutX="498.0" layoutY="150.0" onAction="#on_categ_producto" prefHeight="27.0" prefWidth="209.0" promptText="Ingresa la categoria del producto" />
+      <Label layoutX="498.0" layoutY="123.0" text="Categoria">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="197.0" prefHeight="20.0" prefWidth="81.0" text="Descripcion">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="txtDescrip" fx:id="DescripProductADDP" layoutX="42.0" layoutY="225.0" onAction="#on_descripcion_product" prefHeight="45.0" prefWidth="658.0" promptText="Escribe una breve descripcion del producto (opcional)" />
+      <TextField id="btn_precio_produtc" fx:id="PrecioComADDP" alignment="TOP_LEFT" layoutX="42.0" layoutY="312.0" onAction="#on_precio_product" prefHeight="27.0" prefWidth="179.0" promptText="\$ 0.00" />
+      <Label layoutX="42.0" layoutY="285.0" text="Precio de compra">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="btn_precio_produtc_venta" fx:id="btnprecio_product_venta" alignment="TOP_LEFT" layoutX="248.0" layoutY="312.0" onAction="#on_precio_product_venta" prefHeight="27.0" prefWidth="179.0" promptText="\$ 0.00" />
+      <Label layoutX="248.0" layoutY="285.0" text="Precio de venta">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="btnStock_product" fx:id="StockADDP" alignment="TOP_LEFT" layoutX="445.0" layoutY="312.0" onAction="#on_stock" prefHeight="27.0" prefWidth="129.0" promptText="0" />
+      <Label layoutX="445.0" layoutY="285.0" text="Stock">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="btnStockMin_product" fx:id="StockMInADDP" alignment="TOP_LEFT" layoutX="593.0" layoutY="312.0" onAction="#on_stock_minimo" prefHeight="27.0" prefWidth="129.0" promptText="0" />
+      <Label layoutX="593.0" layoutY="285.0" text="Stock minimo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button id="btnCancelar_Producto" fx:id="btnCancel_product" alignment="TOP_CENTER" layoutX="468.0" layoutY="399.0" mnemonicParsing="false" onAction="#onCancelaccion" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: rgba(208, 18, 18, 1); -fx-background-radius: 5;" text="Cancelar" textFill="WHITE" wrapText="true" />
+      <Button id="btnImportar_Producto" fx:id="btn_import_product" alignment="TOP_CENTER" layoutX="602.0" layoutY="85.0" mnemonicParsing="false" onAction="#onImportar" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: rgba(14, 52, 92, 1); -fx-background-radius: 5;" text="Importar" textFill="WHITE" wrapText="true" />
+   </children>
 </AnchorPane>
